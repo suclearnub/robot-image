@@ -3,8 +3,8 @@ import numpy as np
 import cv2
 import preprocess.py as preprocess
 
-ap.argparse.ArgumentParser()
-app.add_argument("-s", "--source", help="source of incoming images")
+ap=argparse.ArgumentParser()
+ap.add_argument("-s", "--source", help="source of incoming images")
 args = vars(ap.parse_args())
 
 def isNumber(x):
