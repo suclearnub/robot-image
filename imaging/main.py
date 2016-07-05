@@ -1,6 +1,11 @@
+import argparse
 import numpy as np
 import cv2
 import preprocess.py as preprocess
+
+ap.argparse.ArgumentParser()
+app.add_argument("-s", "--source", help="source of incoming images")
+args = vars(ap.parse_args())
 
 def isNumber(x):
     try:
@@ -21,7 +26,13 @@ def grabIntInput(name):
 
 
 # Let us assume that the first file is 1.jpg
-firstFrame = cv2.imread("1.jpg")
+firstFrameSource = str.join('', (args["source"], "1.jpg"))
+try:
+    firstFrame = cv2.imread(firstFrameSource)
+except Exception:
+    print("File not found?")
+    quit()
+
 while True:
     cv2.imshow("First Frame", firstFrame)
 
