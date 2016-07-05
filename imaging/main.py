@@ -22,22 +22,31 @@ def grabIntInput(name):
 
 # Let us assume that the first file is 1.jpg
 firstFrame = cv2.imread("1.jpg")
-cv2.imshow("First Frame", firstFrame)
+while True:
+    cv2.imshow("First Frame", firstFrame)
 
-startX = grabIntInput("startX")
-endX = grabIntInput("endX")
+    startX = grabIntInput("startX")
+    endX = grabIntInput("endX")
 
-startY = grabIntInput("startY")
-endY = grabIntInput("endY")
+    startY = grabIntInput("startY")
+    endY = grabIntInput("endY")
 
-cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
 
-#Y, X
-firstFrameCropped = firstFrame[startY:endY, startX:endX]
-cv2.imshow("Cropped Frame", firstFrameCropped)
+    #Y, X
+    firstFrameCropped = firstFrame[startY:endY, startX:endX]
+    cv2.imshow("Cropped Frame", firstFrameCropped)
+    answer = input("Is this frame OK? [y/n] ")
 
+    cv2.destroyAllWindows()
 
-
+    if answer is "y" or "Y":
+        break
+    elif answer is "n" or "N":
+        print("Please reselect.")
+    else:
+        print("Invalid input, assuming crop is OK.")
+        break
 
 # TODO
 # Get first frame from camera, and then ask user for frame.
