@@ -48,9 +48,6 @@ while True:
         print("Invalid input, assuming crop is OK.")
         break
 
-# TODO
-# Get first frame from camera, and then ask user for frame.
-
 while True:
     # TODO
     # Preprocess image
